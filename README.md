@@ -1,4 +1,8 @@
 # Google-Books-Listing-App
+  <div align="left">
+	
+  ![Repo Views](https://visitor-badge.laobi.icu/badge?page_id=SpencerVJones/Google-Books-Listing-App)
+</div>
 Android application that fetches and displays a list of books from the Google Books API. The app displays the book titles and their corresponding cover images in a GridView.
 
 ## Features
