@@ -2,29 +2,29 @@
   <h2 align="center">Chapterly</h2>
   <div align="left">
 
-![Repo Views](https://visitor-badge.laobi.icu/badge?page_id=SpencerVJones/Google-Books-Listing-App)
+![Repo Views](https://visitor-badge.laobi.icu/badge?page_id=SpencerVJones/Chapterly)
 </div>
 
   <p align="center">
     A fullstack portfolio project: Android app (Kotlin + Compose) plus backend API (Spring Boot + Postgres + Flyway) with Firebase Auth and Firestore sync.
     <br />
     <br />
-    <a href="https://github.com/SpencerVJones/Google-Books-Listing-App/issues">Report Bug</a>
+    <a href="https://github.com/SpencerVJones/Chapterly/issues">Report Bug</a>
     ·
-    <a href="https://github.com/SpencerVJones/Google-Books-Listing-App/issues">Request Feature</a>
+    <a href="https://github.com/SpencerVJones/Chapterly/issues">Request Feature</a>
   </p>
 </div>
 
 <!-- PROJECT SHIELDS -->
 <div align="center">
 
-![License](https://img.shields.io/github/license/SpencerVJones/Google-Books-Listing-App?style=for-the-badge)
-![Contributors](https://img.shields.io/github/contributors/SpencerVJones/Google-Books-Listing-App?style=for-the-badge)
-![Forks](https://img.shields.io/github/forks/SpencerVJones/Google-Books-Listing-App?style=for-the-badge)
-![Stargazers](https://img.shields.io/github/stars/SpencerVJones/Google-Books-Listing-App?style=for-the-badge)
-![Issues](https://img.shields.io/github/issues/SpencerVJones/Google-Books-Listing-App?style=for-the-badge)
-![Last Commit](https://img.shields.io/github/last-commit/SpencerVJones/Google-Books-Listing-App?style=for-the-badge)
-![Repo Size](https://img.shields.io/github/repo-size/SpencerVJones/Google-Books-Listing-App?style=for-the-badge)
+![License](https://img.shields.io/github/license/SpencerVJones/Chapterly?style=for-the-badge)
+![Contributors](https://img.shields.io/github/contributors/SpencerVJones/Chapterly?style=for-the-badge)
+![Forks](https://img.shields.io/github/forks/SpencerVJones/Chapterly?style=for-the-badge)
+![Stargazers](https://img.shields.io/github/stars/SpencerVJones/Chapterly?style=for-the-badge)
+![Issues](https://img.shields.io/github/issues/SpencerVJones/Chapterly?style=for-the-badge)
+![Last Commit](https://img.shields.io/github/last-commit/SpencerVJones/Chapterly?style=for-the-badge)
+![Repo Size](https://img.shields.io/github/repo-size/SpencerVJones/Chapterly?style=for-the-badge)
 ![Platform](https://img.shields.io/badge/platform-Android-3ddc84.svg?style=for-the-badge)
 ![Kotlin](https://img.shields.io/badge/Kotlin-1.9.24-7F52FF.svg?style=for-the-badge)
 ![Jetpack Compose](https://img.shields.io/badge/Jetpack%20Compose-UI-4285F4.svg?style=for-the-badge)
@@ -48,7 +48,6 @@
 - [Demo](#demo)
 - [Project Structure](#project-structure)
 - [API Endpoints](#api-endpoints)
-- [API Examples](#api-examples)
 - [Backend API](#backend-api)
 - [Firebase Auth and Firestore](#firebase-auth-and-firestore)
 - [Performance and Baseline Profile](#performance-and-baseline-profile)
@@ -60,7 +59,6 @@
   - [Run on Emulator or Device](#run-on-emulator-or-device)
   - [Run Backend Locally](#run-backend-locally)
 - [CI](#ci)
-- [Troubleshooting](#troubleshooting)
 - [Usage](#usage)
 - [Roadmap](#roadmap)
 - [Contributing](#contributing)
@@ -140,7 +138,7 @@ If you want, add screenshots/GIFs under `docs/images/` and link them here.
 
 ## Project Structure
 ```bash
-Google-Books-Listing-App/
+Chapterly/
 ├── README.md
 ├── LICENSE
 ├── .github/
@@ -201,25 +199,6 @@ Backend API endpoints (Spring Boot):
 - `GET /api/backend/reviews?bookId={bookId}`
 - `GET /api/backend/reviews/mine`
 - `POST /api/backend/reviews`
-
-## API Examples
-Search Android books:
-```bash
-curl "https://www.googleapis.com/books/v1/volumes?q=android&startIndex=0&maxResults=20&orderBy=relevance"
-```
-
-Newest Kotlin books:
-```bash
-curl "https://www.googleapis.com/books/v1/volumes?q=kotlin&startIndex=0&maxResults=20&orderBy=newest"
-```
-
-Backend example (dev mode using debug header auth):
-```bash
-curl -X POST http://localhost:8080/api/backend/favorites \
-  -H "Content-Type: application/json" \
-  -H "X-Debug-Uid: local-dev-user" \
-  -d '{"bookId":"book-123"}'
-```
 
 ## Backend API
 The backend uses:
@@ -318,11 +297,11 @@ Launch on connected emulator/device:
 ### Installation
 1. Clone the repository:
 ```bash
-git clone https://github.com/SpencerVJones/Google-Books-Listing-App.git
+git clone https://github.com/SpencerVJones/Chapterly.git
 ```
 2. Move into the repo:
 ```bash
-cd Google-Books-Listing-App
+cd Chapterly
 ```
 3. Make Gradle wrapper executable:
 ```bash
@@ -380,122 +359,6 @@ Runs on pushes and PRs:
   - `assembleDebug`
 - Android instrumented tests on emulator (`connectedDebugAndroidTest`)
 
-## Troubleshooting
-### `Execution failed for task ':app:parseDebugLocalResources'` with `ic_launcher_background 2.xml`
-Cause:
-- A copied resource file has an invalid name (spaces are not allowed in Android resource filenames).
-
-Fix:
-1. Check `Chapterly/app/src/main/res/drawable/` and remove or rename any file like `* 2.xml`, `* copy.xml`.
-2. Keep only valid names (`[a-z0-9_]`), for example:
-   - `ic_launcher_background.xml`
-3. Rebuild:
-```bash
-cd Chapterly
-./gradlew clean :app:assembleDebug
-```
-
-### `Duplicate resources` for `ic_launcher` (`.png` + `.webp`)
-Cause:
-- Both `.png` and `.webp` launcher assets exist with the same resource name in `mipmap-*`.
-
-Fix:
-1. Keep one format only (recommended: `.png` set).
-2. Remove duplicate format files from all `mipmap-*` directories.
-3. Rebuild:
-```bash
-cd Chapterly
-./gradlew clean :app:assembleDebug
-```
-
-### `Unresolved class 'ChapterlyApplication'` or `MainActivity` in manifest
-This project package is:
-- `com.example.chapterly`
-
-Verify these values:
-- `Chapterly/app/build.gradle.kts`
-  - `namespace = "com.example.chapterly"`
-  - `applicationId = "com.example.chapterly"`
-- `Chapterly/app/src/main/AndroidManifest.xml`
-  - `android:name="com.example.chapterly.ChapterlyApplication"`
-  - `android:name="com.example.chapterly.MainActivity"`
-
-Then refresh Android Studio:
-1. Open `Google-Books-Listing-App/Chapterly` (not only repo root).
-2. `File > Sync Project with Gradle Files`
-3. `Build > Rebuild Project`
-4. If still red: `File > Invalidate Caches / Restart`
-
-### `SDK location not found`
-Create/update `Chapterly/local.properties`:
-```bash
-cd Chapterly
-echo "sdk.dir=$HOME/Library/Android/sdk" > local.properties
-```
-
-### `No connected devices` on `installDebug`
-Start emulator first, then wait for full boot:
-```bash
-"$HOME/Library/Android/sdk/platform-tools/adb" wait-for-device
-until [ "$("$HOME/Library/Android/sdk/platform-tools/adb" shell getprop sys.boot_completed | tr -d '\r')" = "1" ]; do sleep 2; done
-"$HOME/Library/Android/sdk/platform-tools/adb" devices
-```
-
-### `Activity class ... does not exist`
-Usually means app was not installed or wrong package/activity name was used.
-Use:
-```bash
-cd Chapterly
-./gradlew installDebug
-"$HOME/Library/Android/sdk/platform-tools/adb" shell monkey -p com.example.chapterly -c android.intent.category.LAUNCHER 1
-```
-
-### Firebase Auth shows unavailable
-Cause:
-- `google-services.json` is missing from `Chapterly/app/`.
-
-Fix:
-1. Copy `Chapterly/app/google-services.json.example` to `Chapterly/app/google-services.json`.
-2. Replace all placeholder values with your Firebase project config values.
-3. Rebuild app.
-4. Reopen Account tab.
-
-### Backend cannot connect to database
-Check Postgres container:
-```bash
-cd backend
-docker compose ps
-docker compose logs postgres
-```
-
-If needed, override connection env vars:
-```bash
-export DB_URL=jdbc:postgresql://localhost:5432/chapterly
-export DB_USERNAME=postgres
-export DB_PASSWORD=postgres
-```
-
-### App crashes on launch
-Capture crash logs:
-```bash
-"$HOME/Library/Android/sdk/platform-tools/adb" logcat -c
-"$HOME/Library/Android/sdk/platform-tools/adb" shell monkey -p com.example.chapterly -c android.intent.category.LAUNCHER 1
-sleep 3
-"$HOME/Library/Android/sdk/platform-tools/adb" logcat -d | rg -n "FATAL EXCEPTION|AndroidRuntime|Caused by|com.example.chapterly"
-```
-
-### Hilt duplicate binding errors (`DuplicateBindings` / multiple app roots)
-Cause:
-- Mixed legacy and current package trees being compiled together can register duplicate DI modules or app roots.
-
-Fix:
-1. Build only the Chapterly package tree (already configured in `Chapterly/app/build.gradle.kts` source sets).
-2. Run a clean build:
-```bash
-cd Chapterly
-./gradlew clean :app:assembleDebug
-```
-
 ## Usage
 1. Open the app and enter a search query.
 2. Scroll to load more books.
@@ -522,8 +385,8 @@ Contributions are welcome.
 - Open a pull request
 
 ### Contributors
-<a href="https://github.com/SpencerVJones/Google-Books-Listing-App/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=SpencerVJones/Google-Books-Listing-App"/>
+<a href="https://github.com/SpencerVJones/Chapterly/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=SpencerVJones/Chapterly"/>
 </a>
 
 ## License
@@ -533,4 +396,4 @@ Distributed under the MIT License. See `LICENSE` for details.
 Spencer Jones  
 Email: [jonesspencer99@icloud.com](mailto:jonesspencer99@icloud.com)  
 GitHub: [SpencerVJones](https://github.com/SpencerVJones)  
-Repository: [Google-Books-Listing-App](https://github.com/SpencerVJones/Google-Books-Listing-App)
+Repository: [Chapterly](https://github.com/SpencerVJones/Chapterly)
