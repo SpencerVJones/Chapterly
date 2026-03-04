@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "720969136594",
-    "project_id": "andriodbooks-57262",
-    "storage_bucket": "andriodbooks-57262.firebasestorage.app"
+    "project_number": "YOUR_PROJECT_NUMBER",
+    "project_id": "your-firebase-project-id",
+    "storage_bucket": "your-firebase-project-id.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:720969136594:android:6c076d63f9828bdf06b00b",
+        "mobilesdk_app_id": "YOUR_MOBILE_SDK_APP_ID",
         "android_client_info": {
           "package_name": "com.example.chapterly"
         }
       },
       "oauth_client": [
         {
-          "client_id": "720969136594-ucrrr2t34kkrc90hldd39l7n3n9pt0u2.apps.googleusercontent.com",
+          "client_id": "YOUR_OAUTH_CLIENT_ID.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBTzGn5zOJdG0wzLQUsiVLwdOkXs6458bo"
+          "current_key": "REPLACE_WITH_FIREBASE_WEB_API_KEY"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "720969136594-ucrrr2t34kkrc90hldd39l7n3n9pt0u2.apps.googleusercontent.com",
+              "client_id": "YOUR_OAUTH_CLIENT_ID.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

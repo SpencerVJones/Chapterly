@@ -21,6 +21,9 @@ local.properties
 # Captures
 captures/
 
+# Firebase config (contains API keys)
+Chapterly/app/google-services.json
+
 # Native build outputs
 .externalNativeBuild/
 .cxx/

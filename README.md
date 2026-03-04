@@ -245,7 +245,9 @@ Android app includes:
   - search history
 
 Setup notes:
-- Add `google-services.json` to `Chapterly/app/` for full Firebase runtime support.
+- Copy `Chapterly/app/google-services.json.example` to `Chapterly/app/google-services.json`,
+  then replace placeholder values with your Firebase project config.
+- `Chapterly/app/google-services.json` is gitignored to prevent API key leaks.
 - Without it, the Account tab shows a clear “Firebase not configured” state instead of crashing.
 
 ## Performance and Baseline Profile
@@ -453,9 +455,10 @@ Cause:
 - `google-services.json` is missing from `Chapterly/app/`.
 
 Fix:
-1. Add your Firebase project config file to `Chapterly/app/google-services.json`.
-2. Rebuild app.
-3. Reopen Account tab.
+1. Copy `Chapterly/app/google-services.json.example` to `Chapterly/app/google-services.json`.
+2. Replace all placeholder values with your Firebase project config values.
+3. Rebuild app.
+4. Reopen Account tab.
 
 ### Backend cannot connect to database
 Check Postgres container:
