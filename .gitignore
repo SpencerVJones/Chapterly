@@ -1,0 +1,32 @@
+# macOS
+.DS_Store
+
+# Android Studio / IntelliJ
+.idea/
+*.iml
+
+# Gradle
+.gradle/
+build/
+**/build/
+**/*.apk
+**/*.aab
+**/output-metadata.json
+Chapterly/app/debug/
+Chapterly/app/release/
+
+# Local SDK config
+local.properties
+
+# Captures
+captures/
+
+# Native build outputs
+.externalNativeBuild/
+.cxx/
+
+# Maven / backend
+target/
+**/target/
+.env
+backend/.env

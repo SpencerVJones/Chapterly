@@ -1,0 +1,4 @@
+<resources>
+    <style name="Base.Theme.Chapterly" parent="Theme.Material3.DayNight.NoActionBar">
+    </style>
+</resources>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "720969136594",
+    "project_id": "andriodbooks-57262",
+    "storage_bucket": "andriodbooks-57262.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:720969136594:android:6c076d63f9828bdf06b00b",
+        "android_client_info": {
+          "package_name": "com.example.chapterly"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "720969136594-ucrrr2t34kkrc90hldd39l7n3n9pt0u2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTzGn5zOJdG0wzLQUsiVLwdOkXs6458bo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "720969136594-ucrrr2t34kkrc90hldd39l7n3n9pt0u2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
