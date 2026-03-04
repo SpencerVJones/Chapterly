@@ -62,7 +62,6 @@
 - [Usage](#usage)
 - [Roadmap](#roadmap)
 - [Contributing](#contributing)
-  - [Contributors](#contributors)
 - [License](#license)
 - [Contact](#contact)
 
@@ -383,11 +382,6 @@ Contributions are welcome.
 - Commit your changes (`git commit -m "Add amazing feature"`)
 - Push to your branch (`git push origin feature/amazing-feature`)
 - Open a pull request
-
-### Contributors
-<a href="https://github.com/SpencerVJones/Chapterly/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=SpencerVJones/Chapterly"/>
-</a>
 
 ## License
 Distributed under the MIT License. See `LICENSE` for details.
